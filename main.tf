@@ -1,14 +1,14 @@
 
 provider "aws" {
-region = "ap-southeast-1"
+region = "ap-south-1"
 }
 
 resource "aws_instance" "one" {
-  ami             = "ami-06018068a18569ff2"
+  ami             = "ami-02d7fd1c2af6eead0"
   instance_type   = "t2.micro"
-  key_name        = "rahamabc"
+  key_name        = "1"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "ap-southeast-1a"
+  availability_zone = "ap-south-1a"
   user_data       = <<EOF
 #!/bin/bash
 sudo -i
@@ -23,11 +23,11 @@ EOF
 }
 
 resource "aws_instance" "two" {
-  ami             = "ami-06018068a18569ff2"
+  ami             = "ami-02d7fd1c2af6eead0"
   instance_type   = "t2.micro"
-  key_name        = "rahamabc"
+  key_name        = "1"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "ap-southeast-1b"
+  availability_zone = "ap-south-1b"
   user_data       = <<EOF
 #!/bin/bash
 sudo -i
@@ -42,22 +42,22 @@ EOF
 }
 
 resource "aws_instance" "three" {
-  ami             = "ami-06018068a18569ff2"
+  ami             = "ami-02d7fd1c2af6eead0"
   instance_type   = "t2.micro"
-  key_name        = "rahamabc"
+  key_name        = "1"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "ap-southeast-1a"
+  availability_zone = "ap-south-1a"
   tags = {
     Name = "app-server-1"
   }
 }
 
 resource "aws_instance" "four" {
-  ami             = "ami-06018068a18569ff2"
+  ami             = "ami-02d7fd1c2af6eead0"
   instance_type   = "t2.micro"
-  key_name        = "rahamabc"
+  key_name        = "1"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "ap-southeast-1b"
+  availability_zone = "ap-south-1b"
   tags = {
     Name = "app-server-2"
   }
@@ -88,7 +88,7 @@ resource "aws_security_group" "five" {
 }
 
 resource "aws_s3_bucket" "six" {
-  bucket = "devopsbyrahamterraserverbucket9988oo9988"
+  bucket = "project2bkt"
 }
 
 resource "aws_iam_user" "seven" {
